@@ -17,5 +17,6 @@ class Trade(Base):
     timestamp = Column(DateTime, nullable=False)  # Timestamp of trade
     slippage_bps = Column(Integer, nullable=False)  # Slippage in basis points
     __table_args__ = (
-        Index('ix_ca_mint', ca_mint), # This is the correct way to add a single column index
+        Index('ix_ca_mint', ca_mint),
+        Index('ix_type', type),
     )
